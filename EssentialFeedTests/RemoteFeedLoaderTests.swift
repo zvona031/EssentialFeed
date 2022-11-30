@@ -51,14 +51,17 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
 
-        let clientError = NSError(domain: "Test", code: 0)
+        let samples = [199, 201, 300, 400, 500]
 
-        var capturedError = [RemoteFeedLoader.Error]()
-        sut.load { capturedError.append($0) }
+        samples.enumerated().forEach { index, code in
+            var capturedError = [RemoteFeedLoader.Error]()
+            sut.load { capturedError.append($0) }
 
-        client.complete(withStatusCode: 400)
+            client.complete(withStatusCode: code, at: index)
+            XCTAssertEqual(capturedError, [.invalidData])
+        }
 
-        XCTAssertEqual(capturedError, [.invalidData])
+
     }
 
     private func makeSUT(url: URL = URL(string: "www.google.hr")!) -> (RemoteFeedLoader, HTTPClientSpy) {
@@ -69,23 +72,23 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
 
     private class HTTPClientSpy: HTTPClient {
-        var messages = [(url: URL, completion: (Error?, HTTPURLResponse?) -> Void)]()
+        var messages = [(url: URL, completion: (HTTPClientResponse) -> Void)]()
 
         var requestedURLs: [URL] {
             messages.map { $0.url }
         }
 
-        func get(from url: URL, completion: @escaping (Error?, HTTPURLResponse?) -> Void) {
+        func get(from url: URL, completion: @escaping (HTTPClientResponse) -> Void) {
             messages.append((url, completion))
         }
 
         func complete(with error: Error, at index: Int = 0) {
-            messages[index].completion(error, nil)
+            messages[index].completion(.failure(error))
         }
 
         func complete(withStatusCode: Int, at index: Int = 0) {
-            let response = HTTPURLResponse(url: requestedURLs[index], statusCode: 400, httpVersion: nil, headerFields: nil)
-            messages[index].completion(nil, response)
+            let response = HTTPURLResponse(url: requestedURLs[index], statusCode: 400, httpVersion: nil, headerFields: nil)!
+            messages[index].completion(.success(response))
         }
     }
 }
