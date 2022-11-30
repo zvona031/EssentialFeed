@@ -83,9 +83,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let item2 = makeItem(id: UUID(), description: "a description", location: "a location", imageUrl: URL(string: "http://aa-url.com")!)
 
         let items = [item1.item, item2.item]
-        let itemsJson = [item1.json, item2.json]
         expect(sut, toCompleteWithResult: .success(items)) {
-            let jsonList = makeItemsJson(itemsJson)
+            let jsonList = makeItemsJson([item1.json, item2.json])
             client.complete(withStatusCode: 200, data: jsonList)
         }
     }
@@ -110,11 +109,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
 
     private func makeItemsJson(_ items: [[String: Any]]) -> Data {
-        let jsonItems = [
-            "items": items
-        ]
-        let jsonData = try! JSONSerialization.data(withJSONObject: jsonItems)
-        return jsonData
+        let json = ["items": items]
+        return try! JSONSerialization.data(withJSONObject: json)
     }
 
     private func expect(_ sut: RemoteFeedLoader, toCompleteWithResult result: RemoteFeedLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
