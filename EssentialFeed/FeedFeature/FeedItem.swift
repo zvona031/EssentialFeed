@@ -23,9 +23,9 @@ public struct FeedItem: Equatable {
 
 extension FeedItem: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case description = "description"
-        case location = "location"
+        case id
+        case description
+        case location
         case imageURL = "image"
     }
 }
