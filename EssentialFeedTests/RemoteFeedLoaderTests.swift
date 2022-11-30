@@ -8,7 +8,7 @@
 import XCTest
 @testable import EssentialFeed
 
-class RemoteFeedLoader: FeedLoader{
+class RemoteFeedLoader {
     let client: HTTPClient
     let url: URL
 
@@ -17,7 +17,7 @@ class RemoteFeedLoader: FeedLoader{
         self.url = url
     }
 
-    func load(completion: @escaping (EssentialFeed.LoadFeedResult) -> Void) {
+    func load() {
         client.get(from: url)
     }
 }
@@ -38,7 +38,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let url = URL(string: "www.yahoo.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load { _ in }
+        sut.load()
 
         XCTAssertEqual(client.requestedURL, url)
     }
