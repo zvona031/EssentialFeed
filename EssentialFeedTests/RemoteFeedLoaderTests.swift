@@ -45,7 +45,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         }
     }
 
-    func test_load_deliversErrorOnNon200HTTPResponse() {
+    func test_load_deliversErrorOnNon200HTTPResponse() {  
         let (sut, client) = makeSUT()
 
         let samples = [199, 201, 300, 400, 500]
