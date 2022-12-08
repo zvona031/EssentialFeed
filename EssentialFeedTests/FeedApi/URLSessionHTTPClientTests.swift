@@ -67,7 +67,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             exp.fulfill()
         }
 
-        wait(for: [exp], timeout: 2.0)
+        wait(for: [exp], timeout: 1.0)
     }
 
     // MARK: - Helpers
@@ -114,11 +114,15 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
 
         override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-            requestObserver?(request)
             return request
         }
 
         override func startLoading() {
+            if let requestObserver = URLProtocolStub.requestObserver {
+                client?.urlProtocolDidFinishLoading(self)
+                return requestObserver(request)
+            }
+
             if let data = URLProtocolStub.stub?.data {
                 client?.urlProtocol(self, didLoad: data)
             }
