@@ -27,7 +27,18 @@
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      enableThreadSanitizer = "YES">
+      enableThreadSanitizer = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "110A0AEB2937807600F98F62"
+            BuildableName = "EssentialFeed.framework"
+            BlueprintName = "EssentialFeed"
+            ReferencedContainer = "container:EssentialFeed.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
