@@ -31,6 +31,10 @@ class FeedStore {
     func completeDeletion(with error: NSError, at index: Int = 0) {
 
     }
+
+    func completeDeletionSuccessfully(at index: Int = 0) {
+        insertCallCount += 1
+    }
 }
 
 final class CacheFeedUseCaseTests: XCTestCase {
@@ -56,6 +60,15 @@ final class CacheFeedUseCaseTests: XCTestCase {
         store.completeDeletion(with: anyError())
 
         XCTAssertEqual(store.insertCallCount, 0)
+    }
+
+    func test_save_requestNewCacheInsertionOnSuccessfulDeletion() {
+        let (sut, store) = makeSUT()
+        let items = [uniqueItem(), uniqueItem()]
+        sut.save(items)
+        store.completeDeletionSuccessfully()
+
+        XCTAssertEqual(store.insertCallCount, 1)
     }
 
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStore) {
