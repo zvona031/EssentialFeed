@@ -22,7 +22,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
 
         sut.save(uniqueImageFeed().models) { _ in }
 
-        XCTAssertEqual(store.receivedMessages, [.deleteCacheFeed])
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
 
     func test_save_doesNotRequireInsertionOnDeletionError() {
@@ -31,7 +31,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         sut.save(uniqueImageFeed().models) { _ in }
         store.completeDeletion(with: anyError())
 
-        XCTAssertEqual(store.receivedMessages, [.deleteCacheFeed])
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
 
     func test_save_requestNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
@@ -42,7 +42,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         sut.save(feed.models) { _ in }
         store.completeDeletionSuccessfully()
 
-        XCTAssertEqual(store.receivedMessages, [.deleteCacheFeed, .insert(feed.local, timestamp)])
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(feed.local, timestamp)])
     }
 
     func test_save_failsOnDeletionError()  {
