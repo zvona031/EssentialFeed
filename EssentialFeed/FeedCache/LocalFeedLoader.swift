@@ -39,7 +39,8 @@ public final class LocalFeedLoader {
     }
 
     public func load(completion: @escaping (LoadFeedResult) -> Void) {
-        store.retrieve { [unowned self] result in
+        store.retrieve { [weak self] result in
+            guard let self else { return }
             switch result {
             case let .failure(error):
                 self.store.deleteCachedFeed(completion: { _ in })
