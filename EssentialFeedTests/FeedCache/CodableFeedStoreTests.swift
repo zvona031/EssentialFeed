@@ -143,7 +143,7 @@ final class CodableFeedStoreTests: XCTestCase {
 
         sut.retrieve { retrievedResult in
             switch (expectedResult, retrievedResult) {
-            case (.empty, .empty):
+            case (.empty, .empty), (.failure, .failure):
                 break
 
             case let (.found(expected), .found(retrieved)):
