@@ -119,9 +119,7 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
             "description": description,
             "location": location,
             "image": imageUrl.absoluteString
-        ].compactMapValues { value in
-            value != nil ? value : nil
-        }
+        ].compactMapValues { $0 }
         return (item, itemJSON)
     }
 
