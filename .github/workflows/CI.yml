@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  build-and-test-macos:
 
     runs-on: macos-latest
 
@@ -20,4 +20,19 @@ jobs:
 
 
     - name: Build and test
-      run: xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI_macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
+  build-and-test-ios:
+
+    runs-on: ios-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_14.1.app
+
+
+    - name: Build and test
+      run: xcodebuild clean build test -project EssentialFeediOS.xcodeproj -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
