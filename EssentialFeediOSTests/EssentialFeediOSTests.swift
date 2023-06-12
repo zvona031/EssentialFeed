@@ -1,35 +1,46 @@
-//
-//  EssentialFeediOSTests.swift
-//  EssentialFeediOSTests
-//
-//  Created by Zvonimir Pavlović on 28.05.2023..
-//
-
 import XCTest
-@testable import EssentialFeediOS
+import UIKit
+
+final class FeedViewController: UIViewController {
+    private var loader: FeedViewControllerTests.LoaderSpy?
+    
+    convenience init(loader: FeedViewControllerTests.LoaderSpy) {
+        self.init()
+        self.loader = loader
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loader?.load()
+    }
+}
 
 final class FeedViewControllerTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func test_init_doesNotLoadFeed() {
+        let loader = LoaderSpy()
+        _ = FeedViewController(loader: loader)
+        
+        XCTAssertEqual(loader.loadCallCount, 0)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_viewDidLoad_loadsFeed() {
+        let loader = LoaderSpy()
+        let sut = FeedViewController(loader: loader)
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(loader.loadCallCount, 1)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    // MARK: - Helpers
+    
+    class LoaderSpy {
+        private(set) var loadCallCount: Int = 0
+        
+        func load() {
+            loadCallCount += 1
         }
     }
 
