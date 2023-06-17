@@ -7,10 +7,15 @@ final class FeedViewControllerTests: XCTestCase {
     
     func test_feedView_hasTitle() {
         let (sut, _) = makeSUT()
-
+        
         sut.loadViewIfNeeded()
-
-        XCTAssertEqual(sut.title, "My Feed")
+        
+        let bundle = Bundle(for: FeedViewController.self)
+        let localizedKey = "FEED_VIEW_TITLE"
+        let localizedTitle = bundle.localizedString(forKey: localizedKey, value: nil, table: "Feed")
+        
+        XCTAssertNotEqual(localizedKey, localizedTitle, "Missing localized string for key: \(localizedKey)")
+        XCTAssertEqual(sut.title, localizedTitle)
     }
     
     func test_loadFeedActions_requestFeedFromLoader() {
@@ -261,8 +266,8 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     private func anyImageData() -> Data {
-            return UIImage.make(withColor: .red).pngData()!
-        }
+        return UIImage.make(withColor: .red).pngData()!
+    }
     
     private func makeImage(description: String? = nil, location: String? = nil, url: URL = URL(string: "http://any-url.com")!) -> FeedImage {
         return FeedImage(id: UUID(), description: description, location: location, url: url)
