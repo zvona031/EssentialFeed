@@ -1,10 +1,3 @@
-//
-//  RemoteFeedLoaderTests.swift
-//  EssentialFeedTests
-//
-//  Created by Zvonimir Pavlović on 30.11.2022..
-//
-
 import XCTest
 import EssentialFeed
 

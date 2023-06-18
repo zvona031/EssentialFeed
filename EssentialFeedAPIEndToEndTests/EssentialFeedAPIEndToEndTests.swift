@@ -1,10 +1,3 @@
-//
-//  EssentialFeedAPIEndToEndTests.swift
-//  EssentialFeedAPIEndToEndTests
-//
-//  Created by Zvonimir Pavlović on 27.02.2023..
-//
-
 import XCTest
 import EssentialFeed
 

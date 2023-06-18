@@ -349,7 +349,6 @@
 		1122E00C2A2364990024705C /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				112F43772A37CA5D009ED64E /* FeedImageLoader */,
 				112F43752A37C9FE009ED64E /* Feed UI */,
 			);
 			path = EssentialFeediOS;
@@ -428,13 +427,6 @@
 				112F436C2A37C6FF009ED64E /* Controllers */,
 			);
 			path = "Feed UI";
-			sourceTree = "<group>";
-		};
-		112F43772A37CA5D009ED64E /* FeedImageLoader */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FeedImageLoader;
 			sourceTree = "<group>";
 		};
 		112F437E2A37CC01009ED64E /* Composers */ = {

@@ -1,10 +1,3 @@
-//
-//  EssentialFeedCacheIntegrationTests.swift
-//  EssentialFeedCacheIntegrationTests
-//
-//  Created by Zvonimir Pavlović on 23.04.2023..
-//
-
 import XCTest
 import EssentialFeed
 

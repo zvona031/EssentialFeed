@@ -1,10 +1,3 @@
-//
-//  URLSessionHTTPClientTests.swift
-//  EssentialFeedTests
-//
-//  Created by Zvonimir Pavlović on 01.12.2022..
-//
-
 import XCTest
 import EssentialFeed
 

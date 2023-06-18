@@ -1,10 +1,3 @@
-//
-//  LocalFeedLoader.swift
-//  EssentialFeed
-//
-//  Created by Zvonimir Pavlović on 28.02.2023..
-//
-
 import Foundation
 
 public final class LocalFeedLoader {

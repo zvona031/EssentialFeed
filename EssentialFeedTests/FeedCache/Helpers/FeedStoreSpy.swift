@@ -1,10 +1,3 @@
-//
-//  FeedStoreSpy.swift
-//  EssentialFeedTests
-//
-//  Created by Zvonimir Pavlović on 06.03.2023..
-//
-
 import EssentialFeed
 
 class FeedStoreSpy: FeedStore {

@@ -1,10 +1,3 @@
-//
-//  FeedCachePolicy.swift
-//  EssentialFeedTests
-//
-//  Created by Zvonimir Pavlović on 29.03.2023..
-//
-
 import Foundation
 
 final class FeedCachePolicy {

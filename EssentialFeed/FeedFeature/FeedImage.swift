@@ -1,10 +1,3 @@
-//
-//  FeedItem.swift
-//  EssentialFeed
-//
-//  Created by Zvonimir Pavlović on 30.11.2022..
-//
-
 import Foundation
 
 public struct FeedImage: Hashable {

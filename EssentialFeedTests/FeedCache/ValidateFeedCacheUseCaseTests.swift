@@ -1,10 +1,3 @@
-//
-//  ValidateFeedCacheUseCaseTests.swift
-//  EssentialFeedTests
-//
-//  Created by Zvonimir Pavlović on 29.03.2023..
-//
-
 import XCTest
 import EssentialFeed
 

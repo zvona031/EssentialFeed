@@ -1,10 +1,3 @@
-//
-//  LoadFeedFromCacheUseCaseTests.swift
-//  EssentialFeedTests
-//
-//  Created by Zvonimir Pavlović on 06.03.2023..
-//
-
 import XCTest
 import EssentialFeed
 
