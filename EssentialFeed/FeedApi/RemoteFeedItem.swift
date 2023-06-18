@@ -1,10 +1,3 @@
-//
-//  RemoteFeedItem.swift
-//  EssentialFeed
-//
-//  Created by Zvonimir Pavlović on 28.02.2023..
-//
-
 import Foundation
 
 struct RemoteFeedItem: Decodable {
