@@ -2,24 +2,24 @@ import XCTest
 import EssentialFeed
 
 final class EssentialFeedCacheIntegrationTests: XCTestCase {
-
+    
     override func setUp() {
         super.setUp()
-
+        
         setupEmptyStoreState()
     }
-
+    
     override func tearDown() {
         super.tearDown()
-
+        
         undoStoreSideEffects()
     }
-
+    
     // MARK: - LocalFeedLoader Tests
-
+    
     func test_loadFeed_deliversNoItemsOnEmptyCache() {
         let feedLoader = makeFeedLoader()
-
+        
         expect(feedLoader, toLoad: [])
     }
     
@@ -29,7 +29,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
         let feed = uniqueImageFeed().models
         
         save(feed, with: feedLoaderToPerformSave)
-
+        
         expect(feedLoaderToPerformLoad, toLoad: feed)
     }
     
@@ -42,7 +42,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
         
         save(firstFeed, with: feedLoaderToPerformFirstSave)
         save(latestFeed, with: feedLoaderToPerformLastSave)
-
+        
         expect(feedLoaderToPerformLoad, toLoad: latestFeed)
     }
     
@@ -59,6 +59,22 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
         save(dataToSave, for: image.url, with: imageLoaderToPerformSave)
         
         expect(imageLoaderToPerformLoad, toLoad: dataToSave, for: image.url)
+    }
+    
+    func test_saveImageData_overridesSavedImageDataOnASeparateInstance() {
+        let imageLoaderToPerformFirstSave = makeImageLoader()
+        let imageLoaderToPerformLastSave = makeImageLoader()
+        let imageLoaderToPerformLoad = makeImageLoader()
+        let feedLoader = makeFeedLoader()
+        let image = uniqueImage()
+        let firstImageData = Data("first".utf8)
+        let lastImageData = Data("last".utf8)
+        
+        save([image], with: feedLoader)
+        save(firstImageData, for: image.url, with: imageLoaderToPerformFirstSave)
+        save(lastImageData, for: image.url, with: imageLoaderToPerformLastSave)
+        
+        expect(imageLoaderToPerformLoad, toLoad: lastImageData, for: image.url)
     }
     
     // MARK: - Helpers
@@ -98,7 +114,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
             switch result {
             case let .success(loadedFeed):
                 XCTAssertEqual(loadedFeed, expectedFeed, file: file, line: line)
-
+                
             case let .failure(error):
                 XCTFail("Expected successful feed result, got \(error) instead", file: file, line: line)
             }
@@ -138,19 +154,19 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
     private func setupEmptyStoreState() {
         deleteStoreArtifacts()
     }
-
+    
     private func undoStoreSideEffects() {
         deleteStoreArtifacts()
     }
-
+    
     private func deleteStoreArtifacts() {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
-
+    
     private func testSpecificStoreURL() -> URL {
         return cachesDirectory().appendingPathComponent("\(type(of: self)).store")
     }
-
+    
     private func cachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
