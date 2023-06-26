@@ -96,6 +96,7 @@
 		11BCE2042A4A178B00856A45 /* FeedImageDataStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCE2032A4A178B00856A45 /* FeedImageDataStoreSpy.swift */; };
 		11BCE2062A4A186100856A45 /* CacheFeedImageDataUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCE2052A4A186100856A45 /* CacheFeedImageDataUseCaseTests.swift */; };
 		11BCE2082A4A1AAF00856A45 /* CoreDataFeedImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCE2072A4A1AAF00856A45 /* CoreDataFeedImageDataStoreTests.swift */; };
+		11BCE20B2A4A1D6F00856A45 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCE20A2A4A1D6F00856A45 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
 		11C6F1D92941E8B10014966C /* XCTTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6F1D82941E8B10014966C /* XCTTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
@@ -221,6 +222,7 @@
 		11BCE2052A4A186100856A45 /* CacheFeedImageDataUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedImageDataUseCaseTests.swift; sourceTree = "<group>"; };
 		11BCE2072A4A1AAF00856A45 /* CoreDataFeedImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedImageDataStoreTests.swift; sourceTree = "<group>"; };
 		11BCE2092A4A1C7A00856A45 /* FeedStore2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore2.xcdatamodel; sourceTree = "<group>"; };
+		11BCE20A2A4A1D6F00856A45 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		11C6F1D82941E8B10014966C /* XCTTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -495,6 +497,7 @@
 				115AFB0F29F56BEE00259647 /* CoreDataHelpers.swift */,
 				115AFB1129F56C9D00259647 /* ManagedCache.swift */,
 				115AFB1329F56CA600259647 /* ManagedFeedImage.swift */,
+				11BCE20A2A4A1D6F00856A45 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				11BCE1FC2A4A02EA00856A45 /* URLProtocolStub.swift in Sources */,
 				11BCE2002A4A0D9300856A45 /* FeedImageDataStore.swift in Sources */,
 				119EDCA22A3E0086008AB3BD /* FeedPresenter.swift in Sources */,
+				11BCE20B2A4A1D6F00856A45 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
 				11B9F7F629AD2E5200292F65 /* URLSessionHTTPClient.swift in Sources */,
 				11BCE1FA2A4A025800856A45 /* HTTPURLResponse+StatusCode.swift in Sources */,
 				115AFB1229F56C9D00259647 /* ManagedCache.swift in Sources */,
