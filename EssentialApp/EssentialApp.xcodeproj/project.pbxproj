@@ -27,6 +27,7 @@
 		1116D39E2A4B80D200823FF6 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D39D2A4B80D200823FF6 /* SharedTestHelpers.swift */; };
 		1116D3A02A4C0DFC00823FF6 /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D39F2A4C0DFC00823FF6 /* FeedLoaderCacheDecoratorTests.swift */; };
 		1116D3A22A4C0E3100823FF6 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3A12A4C0E3100823FF6 /* FeedLoaderStub.swift */; };
+		1116D3A42A4C0F8B00823FF6 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3A32A4C0F8B00823FF6 /* XCTestCase+FeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		1116D39D2A4B80D200823FF6 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		1116D39F2A4C0DFC00823FF6 /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		1116D3A12A4C0E3100823FF6 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
+		1116D3A32A4C0F8B00823FF6 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				1116D39B2A4B807900823FF6 /* XCTestCase+MemoryLeakTracking.swift */,
 				1116D39D2A4B80D200823FF6 /* SharedTestHelpers.swift */,
 				1116D3A12A4C0E3100823FF6 /* FeedLoaderStub.swift */,
+				1116D3A32A4C0F8B00823FF6 /* XCTestCase+FeedLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1116D39E2A4B80D200823FF6 /* SharedTestHelpers.swift in Sources */,
+				1116D3A42A4C0F8B00823FF6 /* XCTestCase+FeedLoader.swift in Sources */,
 				1116D3A22A4C0E3100823FF6 /* FeedLoaderStub.swift in Sources */,
 				1116D3A02A4C0DFC00823FF6 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				1116D3972A4B7C7400823FF6 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
