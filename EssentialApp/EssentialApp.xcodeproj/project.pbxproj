@@ -32,6 +32,7 @@
 		1116D3AA2A4C151F00823FF6 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3A92A4C151F00823FF6 /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 		1116D3AC2A4C1B9200823FF6 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3AB2A4C1B9200823FF6 /* FeedImageDataLoaderSpy.swift */; };
 		1116D3AE2A4C1C7800823FF6 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3AD2A4C1C7800823FF6 /* XCTestCase+FeedImageDataLoader.swift */; };
+		1116D3B22A4C2ABB00823FF6 /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3B12A4C2ABB00823FF6 /* FeedImageDataLoaderCacheDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		1116D3A92A4C151F00823FF6 /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		1116D3AB2A4C1B9200823FF6 /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		1116D3AD2A4C1C7800823FF6 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
+		1116D3B12A4C2ABB00823FF6 /* FeedImageDataLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		1116D3502A4B76F200823FF6 = {
 			isa = PBXGroup;
 			children = (
+				1116D3B12A4C2ABB00823FF6 /* FeedImageDataLoaderCacheDecorator.swift */,
 				1116D35B2A4B76F200823FF6 /* EssentialApp */,
 				1116D3722A4B76F200823FF6 /* EssentialAppTests */,
 				1116D37C2A4B76F200823FF6 /* EssentialAppUITests */,
@@ -353,6 +356,7 @@
 				1116D3AA2A4C151F00823FF6 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
 				1116D3A42A4C0F8B00823FF6 /* XCTestCase+FeedLoader.swift in Sources */,
 				1116D3AE2A4C1C7800823FF6 /* XCTestCase+FeedImageDataLoader.swift in Sources */,
+				1116D3B22A4C2ABB00823FF6 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
 				1116D3A22A4C0E3100823FF6 /* FeedLoaderStub.swift in Sources */,
 				1116D3AC2A4C1B9200823FF6 /* FeedImageDataLoaderSpy.swift in Sources */,
 				1116D3A02A4C0DFC00823FF6 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
