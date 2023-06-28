@@ -35,4 +35,4 @@ jobs:
 
 
     - name: Build and test
-      run: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator, id=17EAD5F6-22A4-4C78-BFDF-2E93523F7A21, OS=16.1, name=iPhone 14" ONLY_ACTIVE_ARCH=YES
+      run: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,OS=16.1,name=iPhone 14" ONLY_ACTIVE_ARCH=YES
