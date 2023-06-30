@@ -27,6 +27,7 @@
 		110C820A2A4EE4B70034CEFE /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C82092A4EE4B70034CEFE /* HTTPClientStub.swift */; };
 		110C820C2A4EE5070034CEFE /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C820B2A4EE5070034CEFE /* InMemoryFeedStore.swift */; };
 		110C822C2A4EFADE0034CEFE /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C822B2A4EFADE0034CEFE /* UIView+TestHelpers.swift */; };
+		110C822E2A4F06430034CEFE /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C822D2A4F06430034CEFE /* CombineHelpers.swift */; };
 		1116D35D2A4B76F200823FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D35C2A4B76F200823FF6 /* AppDelegate.swift */; };
 		1116D35F2A4B76F200823FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D35E2A4B76F200823FF6 /* SceneDelegate.swift */; };
 		1116D3612A4B76F200823FF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116D3602A4B76F200823FF6 /* ViewController.swift */; };
@@ -86,6 +87,7 @@
 		110C82092A4EE4B70034CEFE /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
 		110C820B2A4EE5070034CEFE /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 		110C822B2A4EFADE0034CEFE /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
+		110C822D2A4F06430034CEFE /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		1116D3592A4B76F200823FF6 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1116D35C2A4B76F200823FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1116D35E2A4B76F200823FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				1116D3652A4B76F200823FF6 /* Assets.xcassets */,
 				1116D3672A4B76F200823FF6 /* LaunchScreen.storyboard */,
 				1116D36A2A4B76F200823FF6 /* Info.plist */,
+				110C822D2A4F06430034CEFE /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				1116D3612A4B76F200823FF6 /* ViewController.swift in Sources */,
 				1116D35D2A4B76F200823FF6 /* AppDelegate.swift in Sources */,
+				110C822E2A4F06430034CEFE /* CombineHelpers.swift in Sources */,
 				110C81EE2A4EDDB00034CEFE /* FeedViewAdapter.swift in Sources */,
 				1116D35F2A4B76F200823FF6 /* SceneDelegate.swift in Sources */,
 				110C81EA2A4EDDA50034CEFE /* FeedLoaderPresentationAdapter.swift in Sources */,
